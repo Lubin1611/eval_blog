@@ -5,13 +5,18 @@
  * Date: 02/04/2019
  * Time: 13:27
  */
+
+session_start();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link rel="stylesheet" href="./public/css/styleBlog.css">
 </head>
@@ -25,6 +30,7 @@
             if (isset($_SESSION['rang']) == 1) {
                 ?>
                 <a href="index.php?page=espace_admin">Accédez a votre espace d'administration</a>
+                <a href="index.php?page=deconnection">Se déconnecter</a>
             <?php
             } else {
             ?>
@@ -42,7 +48,13 @@
 
         <ul>
             <a href="index.php?page=selected_one&id=<?= $liste->id_billet ?>">
-                <li><?= $liste->titre_billet ?>, le  <?= $liste->date_billet ?></li></a>
+                <li><?= $liste->titre_billet ?>, le  <?= $liste->date_billet ?></li>
+
+                <?php    if (isset($_SESSION['rang']) == 1) { ?>
+                <a href="index.php?page=edit_article&idAlt=<?= $liste->id_billet ?>"><i class="fas fa-edit"></i></a>
+                    <a href="index.php?page=delete_article&idAlt2=<?= $liste->id_billet ?>"><i class="far fa-trash-alt"></i></a>
+                <?php } ?>
+            </a>
         </ul>
 
     <?php } ?>

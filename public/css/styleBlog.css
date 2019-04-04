@@ -1,21 +1,52 @@
 body {
     width: 100%;
+    height: 95vh;
     margin:0;
     padding: 0;
-    background-color: ;
+}
+
+h1 {
+    text-align: center;
 }
 
 #main {
-
     margin: auto;
     padding: 10px;
     width: 80%;
 
 }
 
+#titre_article {
+    width: 100%;
+    height: 30px;
+}
+
+#comments {
+    margin-top: 2%;
+}
+
+#articles {
+    margin-top: 5%;
+    box-shadow: 10px 10px 5px #656565;;
+    padding: 50px;
+    height: 100%;
+}
+
+#no_access {
+    width: 100%;
+    background-color: orange;
+    color: white;
+    font-family: "Noto Sans";
+    margin-top: 5%;
+    padding: 10px;
+
+}
+
 header {
     width: 100%;
-    background-color: cornflowerblue;
+    background-color: slategrey;
+    color: white;
+    font-family: "Noto Sans";
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -23,6 +54,7 @@ header {
 }
 
 #commentaires {
-    border: 1px solid black;
-    padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
 }
