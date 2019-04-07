@@ -1,14 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Administrateur
- * Date: 02/04/2019
- * Time: 13:27
+ * User: Lubin
+ * Date: 07/04/2019
+ * Time: 17:23
  */
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,44 +15,43 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link rel="stylesheet" href="./public/css/bootstrap.css">
     <link rel="stylesheet" href="./public/css/styleBlog.css">
+    <link rel="stylesheet" href="./public/css/bootstrap.css">
+
 </head>
 <body>
 
-<div id='main'>
-
-    <header class="d-flex flex-wrap">
-        <div>
-            <h1>Bienvenue sur mon blog !</h1>
-            <nav class="nav justify-content-center">
-                <a href="index.php?page=index" class="nav-link">Accueil</a>
-                <a href="index.php?page=vue_inscription" class="nav-link">S'inscrire</a>
-            </nav>
-        </div>
-        <?php
-        if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
-            ?>
+<header class="d-flex flex-wrap">
+    <div>
+        <h1>Bienvenue sur mon blog !</h1>
+        <nav class="nav justify-content-center">
+            <a href="index.php?page=index" class="nav-link">Accueil</a>
+            <a href="index.php?page=vue_inscription" class="nav-link">S'inscrire</a>
+        </nav>
+    </div>
+    <?php
+    if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
+        ?>
         <nav class="nav">
             <a href="index.php?page=espace_admin" class="nav-link">Ecrire un article</a>
             <a href="index.php?page=index" class="nav-link">Liste des articles</a>
             <a href="index.php?page=deconnection" class="nav-link">Se déconnecter</a>
         </nav>
-            <?php
-            if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
-                ?>
-                <div>Bienvenue, <?php echo $_SESSION['nom']; ?>&nbsp; <?php echo $_SESSION['prenom']; ?></div>
-            <?php } ?>
         <?php
-        }
-        else if (isset($_SESSION['rang']) and $_SESSION['rang'] == 0) {
+        if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
+            ?>
+            <div>Bienvenue, <?php echo $_SESSION['nom']; ?>&nbsp; <?php echo $_SESSION['prenom']; ?></div>
+        <?php } ?>
+        <?php
+    }
+    else if (isset($_SESSION['rang']) and $_SESSION['rang'] == 0) {
         ?>
         <div>
             <p>Bienvenue, <?php echo $_SESSION['nom']; ?>&nbsp; <?php echo $_SESSION['prenom']; ?></p>
             <a href="index.php?page=deconnection" class="nav-link">Se déconnecter</a>
         </div>
         <?php
-        } else {
+    } else {
         ?>
         <form action="index.php?page=connection" method="post">
             <label>Votre pseudo : </label>&nbsp;
@@ -69,35 +65,27 @@
                                                              name="password">
             <input type="submit" class="btn btn-primary mb-2" value="Envoyez">
         </form>
-        <?php }
-        ?>
-    </header>
-
-    <h2>Liste des articles</h2>
-
-    <div id="content" class="d-flex flex-wrap">
-
-        <?php foreach ($listes as $liste) { ?>
+    <?php }
+    ?>
+</header>
 
 
-            <div id='new_cases'><a href="index.php?page=selected_one&id=<?= $liste->id_billet ?>">
+<div id = 'main'>
+    <div id="space"></div>
 
-                    <?= $liste->titre_billet ?>, le <?= $liste->date_billet ?> </a>
-
-                <?php if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) { ?>
-
-                    <a href="index.php?page=edit_article&idAlt=<?= $liste->id_billet ?>"><i class="fas fa-edit"></i></a>
-                    <a href="index.php?page=delete_article&idAlt2=<?= $liste->id_billet ?>"><i
-                                class="far fa-trash-alt"></i></a>
-
-                <?php } ?>
+    <h1>Inscrivez-vous dès maintenant</h1>
 
 
-            </div>
+    <form action="index.php?page=inscription" method="post">
+
+        <label>Nom : </label>&nbsp; <input type="text" class="form-control" name="nom">
+        <label>Prénom : </label>&nbsp;<input type="text" class="form-control" name="prenom">
+        <label>Pseudo : </label>&nbsp; <input type="text" class="form-control" name="login_name">
+        <label>Mot de passe  : </label>&nbsp;<input type="password" class="form-control" name="mdp">
+        <input type="submit" value="Envoyez">
+    </form>
 
 
-        <?php } ?>
-    </div>
 </div>
 
 </body>

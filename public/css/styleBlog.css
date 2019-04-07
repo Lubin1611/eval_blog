@@ -1,6 +1,6 @@
-body {
+html, body {
     width: 100%;
-    height: 95vh;
+    height: 100%;
     margin:0;
     padding: 0;
 }
@@ -9,42 +9,14 @@ h1 {
     text-align: center;
 }
 
-#main {
-    margin: auto;
-    padding: 10px;
-    width: 80%;
-
-}
-
-#titre_article {
-    width: 100%;
-    height: 30px;
-}
-
-#comments {
-    margin-top: 2%;
-}
-
-#articles {
-    margin-top: 5%;
-    box-shadow: 10px 10px 5px #656565;;
-    padding: 50px;
-    height: 100%;
-}
-
-#no_access {
-    width: 100%;
-    background-color: orange;
-    color: white;
-    font-family: "Noto Sans";
-    margin-top: 5%;
-    padding: 10px;
-
+h2 {
+    margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 header {
     width: 100%;
-    background-color: slategrey;
+    background-color: #0a5a6d;
     color: white;
     font-family: "Noto Sans";
     display: flex;
@@ -53,8 +25,144 @@ header {
     align-items: center;
 }
 
+header a {
+     color: white;
+     font-size: 1.2vw!important;
+ }
+
+header a:hover {
+    color: orange;
+}
+
+a:hover{
+    color: orange;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+}
+
+#main {
+
+    margin: auto;
+    width: 80%;
+    height: 100%;
+
+}
+
+#content {
+
+    box-shadow: 5px 5px 5px #656565;
+    top:0;
+    left:0;
+    margin-bottom: 5%;
+
+}
+
+
+#new_cases {
+    font-size: 1vw;
+    width: 30%;
+    height: 220px;
+    border: 1px solid black;
+    background-image: url("Latest-News.jpg");
+    margin-right: 3.25%;
+    margin-bottom: 3.25%;
+    text-align: center;
+}
+
+#new_cases > a {
+    color: #0a5a6d;
+    text-decoration: none;
+}
+
+#new_cases > a:hover {
+    color: orange;
+
+}
+
+#titre {
+    width: 100%;
+    background-color: orange;
+    color: white;
+    font-family: "Noto Sans";
+    padding: 10px;
+    margin-bottom: 5%;
+}
+
+#titre_article {
+    width: 100%;
+}
+
+#comment {
+    margin-top: 10%;
+}
+
+#comments > a {
+    color: #0a5a6d;
+}
+
+#articles {
+    margin-top: 5%;
+    box-shadow: 5px 5px 5px #656565;;
+    margin-bottom: 5%;
+    padding: 50px;
+}
+
+#no_access {
+
+    font-family: "Noto Sans";
+
+}
+
+#contenu_article {
+
+    margin-bottom: 3%;
+}
+
+
 #commentaires {
     width: 100%;
     height: 100%;
     margin-top: 3%;
+}
+
+#btn {
+     background-color: #0a5a6d;
+ }
+
+#btn2{
+    background-color: orange;
+}
+
+#space {
+
+    height: 100px;
+}
+
+#space_title {
+
+    margin-top: 5%;
+}
+@media (max-width: 1388px) {
+
+    #main {
+        width: 100%;
+    }
+
+    a {
+        font-size:1em;
+    }
+}
+
+@media (max-width: 812px) {
+
+    #main {
+        width: 100%;
+    }
+
+    a {
+        font-size:1em;
+    }
 }
