@@ -93,9 +93,12 @@ class user_controler
     public function send_logout()
     {
         $this->model->logout();
-        $listes = $this->model->redir_all_articles();
-
-        include "View/listeBillets.php";
+        
+        $this->redir_articles();
+        
+      //  $listes = $this->model->redir_all_articles();
+      // include "View/listeBillets.php";
+        
     }
 
     public function redir_articles()
