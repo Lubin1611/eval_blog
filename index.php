@@ -23,7 +23,7 @@ if (isset($_GET['controler'])) { // isset GET['controler'] verifie si une valeur
                 case "index":
                     $index = new article_controler();
                     $index->liste_articles();
-
+                    break;
                 case "selected_one":
                     $selected = new article_controler();
                     $selected->redir_article();
@@ -37,7 +37,8 @@ if (isset($_GET['controler'])) { // isset GET['controler'] verifie si une valeur
                 case "delete_article":
                     $del_article = new article_controler();
                     $del_article->send_delete_article();
-
+                    break;
+              
                 case "article_create":
                     $new_article = new article_controler();
                     $new_article->submit_article();
