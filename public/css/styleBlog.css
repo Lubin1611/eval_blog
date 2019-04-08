@@ -27,7 +27,7 @@ header {
 
 header a {
      color: white;
-     font-size: 1.2vw!important;
+     font-size: 1em;
  }
 
 header a:hover {
@@ -62,7 +62,7 @@ textarea {
 
 
 #new_cases {
-    font-size: 1vw;
+    font-size: 1em;
     width: 30%;
     height: 220px;
     border: 1px solid black;
