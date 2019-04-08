@@ -145,6 +145,14 @@ textarea {
 
     margin-top: 5%;
 }
+
+#access_denied {
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+
+
 @media (max-width: 1388px) {
 
     #main {

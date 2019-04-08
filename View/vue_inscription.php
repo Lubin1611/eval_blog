@@ -1,5 +1,4 @@
-<?php
-/**
+<?php/**
  * Created by PhpStorm.
  * User: Lubin
  * Date: 07/04/2019
@@ -25,17 +24,17 @@
     <div>
         <h1>Bienvenue sur mon blog !</h1>
         <nav class="nav justify-content-center">
-            <a href="index.php?page=index" class="nav-link">Accueil</a>
-            <a href="index.php?page=vue_inscription" class="nav-link">S'inscrire</a>
+            <a href="index.php?controler=articles&action=index" class="nav-link">Accueil</a>
+            <a href="index.php?controler=users&action=vue_inscription" class="nav-link">S'inscrire</a>
         </nav>
     </div>
     <?php
     if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
         ?>
         <nav class="nav">
-            <a href="index.php?page=espace_admin" class="nav-link">Ecrire un article</a>
-            <a href="index.php?page=index" class="nav-link">Liste des articles</a>
-            <a href="index.php?page=deconnection" class="nav-link">Se déconnecter</a>
+            <a href="index.php?controler=users&action=espace_admin" class="nav-link">Ecrire un article</a>
+            <a href="index.php?controler=articles&action=index" class="nav-link">Liste des articles</a>
+            <a href="index.php?controler=users&action=deconnection" class="nav-link">Se déconnecter</a>
         </nav>
         <?php
         if (isset($_SESSION['rang']) and $_SESSION['rang'] == 1) {
@@ -48,12 +47,12 @@
         ?>
         <div>
             <p>Bienvenue, <?php echo $_SESSION['nom']; ?>&nbsp; <?php echo $_SESSION['prenom']; ?></p>
-            <a href="index.php?page=deconnection" class="nav-link">Se déconnecter</a>
+            <a href="index.php?controler=users&action=deconnection" class="nav-link">Se déconnecter</a>
         </div>
         <?php
     } else {
         ?>
-        <form action="index.php?page=connection" method="post">
+        <form action="index.php?controler=users&action=connection" method="post">
             <label>Votre pseudo : </label>&nbsp;
             <div class="input-group mb-2 mr-sm-2">
                 <div class="input-group-prepend">
@@ -76,7 +75,7 @@
     <h1>Inscrivez-vous dès maintenant</h1>
 
 
-    <form action="index.php?page=inscription" method="post">
+    <form action="index.php?controler=users&action=inscription" method="post">
 
         <label>Nom : </label>&nbsp; <input type="text" class="form-control" name="nom">
         <label>Prénom : </label>&nbsp;<input type="text" class="form-control" name="prenom">

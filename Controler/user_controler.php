@@ -6,6 +6,14 @@
  * Time: 13:54
  */
 
+//j'appelle session_start() dans certaines de mes methodes qui effectuent une redirection.
+//J'en ai besoin pour stocker des valeurs de session, notamment SESSION [rang].
+// SESSION['rang'] selon la valeur affectée, définit les privilèges de la personne connectée ou non.
+// Aucune SESSION stockée = visiteur lambda
+//SESSION == 1 : administrateur
+//SESSION == 0 : membre connecté, qui peut commenter.
+
+
 class user_controler
 {
 
@@ -31,7 +39,7 @@ class user_controler
 
     public function sign_up()
     {
-
+        session_start();
         include "View/vue_inscription.php";
 
     }
